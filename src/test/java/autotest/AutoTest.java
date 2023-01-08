@@ -15,7 +15,7 @@ import static io.qameta.allure.Allure.step;
 
 
 public class AutoTest extends TestBase {
-    PageObjects pageObjects = new PageObjects()
+    PageObjects pageObjects = new PageObjects();
     Faker faker = new Faker(new Locale("en"));
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
     String[] birthday = dateFormat.format(faker.date().birthday()).split(" ");
