@@ -15,7 +15,7 @@ import static io.qameta.allure.Allure.step;
 
 
 public class AutoTest extends TestBase {
-
+    PageObjects pageObjects = new PageObjects()
     Faker faker = new Faker(new Locale("en"));
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
     String[] birthday = dateFormat.format(faker.date().birthday()).split(" ");
@@ -36,10 +36,10 @@ public class AutoTest extends TestBase {
     @Description("Test for registration")
     void formTest() {
         step("Open page", () -> {
-            new PageObjects().openPage();
+            pageObjects.openPage();
         });
         step("Fill form", () -> {
-            new PageObjects()
+            pageObjects
                     .setFirstName(firstName)
                     .setLastName(lastName)
                     .setEmail(emailAddress)
@@ -53,7 +53,8 @@ public class AutoTest extends TestBase {
                     .chooseState("Haryana", "Karnal");
         });
         step("Check fill form", () -> {
-            new PageObjects().verifyResultsModal()
+            pageObjects
+                    .verifyResultsModal()
                     .checkResults("Student Name", firstName + " " + lastName)
                     .checkResults("Student Email", emailAddress)
                     .checkResults("Gender", "Male")
