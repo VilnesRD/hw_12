@@ -22,7 +22,7 @@ public class PageObjects {
             hobbiesInput = $("#hobbiesWrapper");
 
     public PageObjects openPage() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
 

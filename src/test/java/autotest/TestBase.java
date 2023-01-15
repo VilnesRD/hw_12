@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        //Configuration.baseUrl = System.getProperty("base_url", "https://demoqa.com");
+        Configuration.baseUrl = System.getProperty("base_url", "https://demoqa.com");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browser_ver", "100.0");
         Configuration.browserSize = System.getProperty("screen_resolution", "1920x1080");
